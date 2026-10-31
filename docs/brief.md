@@ -38,11 +38,11 @@ One page that replaces Linktree in every bio. It shows current mixes, upcoming g
 - Gigs come from a data file, not from Bandsintown or Resident Advisor (Thomas, 31 October 2026).
 - Booking is an email link, not a form service. The address is visible to scrapers (Thomas, 31 October 2026).
 - English only (Thomas, 31 October 2026).
+- The SoundCloud profile player is embedded, and Mixcloud is a link. SoundCloud is the main platform: Thomas has Artist Pro there, so uploads are unlimited and the statistics are better. The concern was that listeners without an account get ads and cannot skip ahead. In a test of the embedded player in a private browser tab, a mix started, skipping ahead worked and no ad played (Thomas, 31 October 2026).
 
 ## Open decisions
 
-- **Which player is embedded.** SoundCloud is the main platform: Thomas has Artist Pro there, so uploads are unlimited and the statistics are better. Thomas reports ads and no seeking without an account for SoundCloud listeners, while Mixcloud has neither restriction but caps uploads on the free plan. Proposal: build a test page with both embeds and try them on a phone without logging in. Embed SoundCloud if seeking works without an account and no ads play before a mix, otherwise Mixcloud.
-- **Genre line.** Drafted from Thomas's description of the sound, then edited by him.
+- **Genre line.** Proposal: "House music for body and soul.", from Thomas's SoundCloud bio.
 
 ## Done when
 
