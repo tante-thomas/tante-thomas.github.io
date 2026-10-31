@@ -48,16 +48,19 @@ h2 {
   color: var(--muted);
 }
 
-/* Wordmark until a logo exists. The set name is about 9 times as wide as the
-   font size, so 9.5vw keeps it on one line inside the gutters from 320 px up. */
+/* Wordmark until a logo exists. The set name is about 9.2 times as wide as the
+   font size, so 10cqi (a tenth of the column) keeps it on one line at every width.
+   Viewport units overflowed on desktop, where the column stops growing. The gradient
+   covers only the column, so a letter outside it was not painted at all. */
 .hero {
+  container-type: inline-size;
   padding: 3.5rem 0 0.5rem;
   text-align: center;
 }
 
 .wordmark {
   margin: 0;
-  font-size: clamp(1.75rem, 9.5vw, 4.5rem);
+  font-size: clamp(1.75rem, 10cqi, 4.5rem);
   font-weight: 900;
   letter-spacing: 0.08em;
   line-height: 1;
