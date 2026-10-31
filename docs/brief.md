@@ -43,6 +43,7 @@ One page that replaces Linktree in every bio. It shows current mixes, upcoming g
 - The genre line is "Music for body and soul." It changes the proposal "House music for body and soul." from the SoundCloud bio (Thomas, 31 October 2026).
 - Past gigs stay on the page as their own list, as in the SoundCloud bio and on Linktree. They show bookers where TANTE THOMAS has played (Thomas, 31 October 2026).
 - The accent colours are the signature pink and yellow-orange (Thomas, 31 October 2026).
+- Pink is the accent colour for links, buttons and gig dates. The yellow-orange appears only in the wordmark's gradient (Thomas, 31 October 2026).
 - The site needs an Impressum because German law requires one (Thomas, 31 October 2026).
 - The SoundCloud player loads only after a click on "Load SoundCloud player". Until then the page sends no visitor data to SoundCloud, so no consent banner is needed (Thomas, 31 October 2026).
 

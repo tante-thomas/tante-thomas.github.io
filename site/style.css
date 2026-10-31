@@ -5,7 +5,7 @@
   --surface: #17171b;
   --text: #f2f2f2;
   --muted: #a3a3ad;
-  /* Signature colours: pink with yellow-orange. */
+  /* Signature colours: pink is the accent. Yellow-orange appears only in the wordmark's gradient. */
   --accent: #ff5d8f;
   --accent-warm: #ffb02e;
   --column-width: 40rem;
@@ -152,7 +152,7 @@ h2 {
 
 .gig-list time {
   font-weight: 700;
-  color: var(--accent-warm);
+  color: var(--accent);
 }
 
 .gig-place {
