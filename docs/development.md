@@ -17,7 +17,7 @@ The press kit in the booking section links three files in [`site/press/`](../sit
 |---|---|---|
 | `tante-thomas-press-photo.jpg` | the press photo by Niklas Hemker, full size (6000 × 6000 px, 9.7 MB) | the "Press photo" download |
 | `tante-thomas-press-photo-800.jpg` | the same photo, 800 × 800 px, JPEG quality 80 (about 85 KB) | the photo shown on the page and the link preview card |
-| `tante-thomas-technical-rider.pdf` | the tech rider, one page, in German until the English version replaces it (Thomas, 31 October 2026) | the "Tech rider" download |
+| `tante-thomas-technical-rider.pdf` | the tech rider, one page, in English (Thomas, 31 October 2026) | the "Tech rider" download |
 
 The bio, the genre line and the photo credit are text in `site/index.html`, in the `press-kit` block.
 
@@ -30,7 +30,7 @@ The bio, the genre line and the photo credit are text in `site/index.html`, in t
   ```
 
   If the new photo is not square, change the size in `resize`, the `width` and `height` of the `<img>` and the `og:image:width` and `og:image:height` tags in `site/index.html`. Update the size given next to the "Press photo" button as well, and the photo credit if the photographer changes.
-- **New rider:** save it as `tante-thomas-technical-rider.pdf`. Check the page count and language next to the "Tech rider" button.
+- **New rider:** save it as `tante-thomas-technical-rider.pdf`. Check the page count next to the "Tech rider" button.
 
 The link preview card (Open Graph and Twitter card tags in the `<head>` of `site/index.html`) points to `https://tante-thomas.github.io/press/tante-thomas-press-photo-800.jpg`. WhatsApp and other apps cache previews for days, so a new photo may show there only later.
 
