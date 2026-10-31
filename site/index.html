@@ -8,6 +8,7 @@
   <title>TANTE THOMAS</title>
   <link rel="stylesheet" href="style.css">
   <script src="gigs.js" defer></script>
+  <script src="player.js" defer></script>
 </head>
 <body>
   <main>
@@ -24,9 +25,17 @@
     <section aria-labelledby="mixes-heading">
       <h2 id="mixes-heading">Mixes</h2>
       <!-- The profile player lists the newest uploads, so a new mix needs no change here.
-           46170096 is the user ID of soundcloud.com/tantethomas, from SoundCloud's oEmbed answer. -->
-      <iframe class="player" title="TANTE THOMAS on SoundCloud" loading="lazy" allow="autoplay; encrypted-media"
-        src="https://w.soundcloud.com/player/?visual=true&url=https%3A%2F%2Fapi.soundcloud.com%2Fusers%2F46170096&show_artwork=true"></iframe>
+           46170096 is the user ID of soundcloud.com/tantethomas, from SoundCloud's oEmbed answer.
+           player.js inserts the player only after the click (privacy.html, "SoundCloud player"). -->
+      <div id="player-consent" class="player-consent"
+        data-player-source="https://w.soundcloud.com/player/?visual=true&amp;url=https%3A%2F%2Fapi.soundcloud.com%2Fusers%2F46170096&amp;show_artwork=true">
+        <p>The player comes from SoundCloud in Berlin. Loading it sends your IP address and browser data to SoundCloud,
+          which may store cookies on your device to run the player, measure use and show ads.
+          Data may also go to countries outside the EU. You can remove the player again at any time.
+          Details are in the <a href="privacy.html#soundcloud">privacy policy</a>.</p>
+        <button id="load-player" class="button" type="button">Load SoundCloud player</button>
+      </div>
+      <button id="unload-player" class="unload-player" type="button" hidden>Remove SoundCloud player</button>
     </section>
 
     <section aria-labelledby="gigs-heading">
@@ -48,6 +57,9 @@
     </section>
   </main>
 
-  <footer>TANTE THOMAS</footer>
+  <footer>
+    <p>TANTE THOMAS</p>
+    <nav aria-label="Legal"><a href="impressum.html">Impressum</a> <a href="privacy.html">Privacy policy</a></nav>
+  </footer>
 </body>
 </html>

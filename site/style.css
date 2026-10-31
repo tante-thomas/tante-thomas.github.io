@@ -5,7 +5,7 @@
   --surface: #17171b;
   --text: #f2f2f2;
   --muted: #a3a3ad;
-  /* Signature colours: pink with yellow-orange. */
+  /* Signature colours: pink is the accent. Yellow-orange appears only in the wordmark's gradient. */
   --accent: #ff5d8f;
   --accent-warm: #ffb02e;
   --column-width: 40rem;
@@ -123,6 +123,33 @@ h2 {
   border-radius: 0.5rem;
 }
 
+/* The notice and the "Load SoundCloud player" button, shown until the visitor loads the player. */
+.player-consent {
+  padding: 1.25rem 1rem;
+  background: var(--surface);
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+.player-consent p {
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* No display rule here, so the hidden attribute keeps working. */
+.unload-player {
+  margin-top: 0.5rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.85rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .gig-list {
   margin: 0;
   padding: 0;
@@ -141,7 +168,7 @@ h2 {
 
 .gig-list time {
   font-weight: 700;
-  color: var(--accent-warm);
+  color: var(--accent);
 }
 
 .gig-place {
@@ -184,7 +211,10 @@ h2 {
 .button {
   display: inline-block;
   border-color: var(--accent);
+  background: none;
   color: var(--accent);
+  font: inherit;
+  cursor: pointer;
 }
 
 footer {
@@ -192,4 +222,40 @@ footer {
   text-align: center;
   font-size: 0.85rem;
   color: var(--muted);
+}
+
+footer p {
+  margin: 0 0 0.5rem;
+}
+
+footer nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+footer a {
+  color: var(--muted);
+}
+
+/* The Impressum and the privacy policy: running text with a link back to the page. */
+.legal {
+  padding-top: 2rem;
+}
+
+.legal h1 {
+  margin: 1.5rem 0 1rem;
+  font-size: 1.75rem;
+}
+
+.legal h2 {
+  margin-top: 2rem;
+}
+
+.legal address {
+  font-style: normal;
+}
+
+.legal a {
+  overflow-wrap: anywhere;
 }
