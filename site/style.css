@@ -1,0 +1,155 @@
+/* Dark and mobile-first (docs/brief.md). Wider screens only widen the column. */
+
+:root {
+  --background: #0b0b0d;
+  --surface: #17171b;
+  --text: #f2f2f2;
+  --muted: #a3a3ad;
+  --accent: #ff5d8f;
+  --column-width: 40rem;
+  --gutter: 1rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+}
+
+main {
+  max-width: var(--column-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter) 3rem;
+}
+
+a {
+  color: var(--accent);
+}
+
+section {
+  margin-top: 2.5rem;
+}
+
+h2 {
+  margin: 0 0 1rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Wordmark until a logo exists. The set name is about 9 times as wide as the
+   font size, so 9.5vw keeps it on one line inside the gutters from 320 px up. */
+.hero {
+  padding: 3.5rem 0 0.5rem;
+  text-align: center;
+}
+
+.wordmark {
+  margin: 0;
+  font-size: clamp(1.75rem, 9.5vw, 4.5rem);
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.genre {
+  margin: 0.75rem 0 0;
+  color: var(--muted);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.links a,
+.button {
+  display: inline-block;
+  padding: 0.6rem 1.1rem;
+  border: 1px solid var(--muted);
+  border-radius: 999px;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.links a:hover,
+.links a:focus-visible,
+.button:hover,
+.button:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.player {
+  display: block;
+  width: 100%;
+  height: 450px;
+  border: 0;
+  border-radius: 0.5rem;
+}
+
+#gig-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#gig-list li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0 1rem;
+  padding: 0.9rem 1rem;
+  margin-bottom: 0.5rem;
+  background: var(--surface);
+  border-radius: 0.5rem;
+}
+
+#gig-list time {
+  font-weight: 700;
+}
+
+.gig-place {
+  grid-column: 1;
+  color: var(--muted);
+}
+
+#gig-list li a {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: center;
+}
+
+#gig-status {
+  color: var(--muted);
+}
+
+.booking p {
+  margin: 0 0 1rem;
+}
+
+.button {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+footer {
+  padding: 1.5rem var(--gutter);
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
