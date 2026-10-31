@@ -17,6 +17,8 @@ python -m http.server 8000 --directory site
 
 Then open http://localhost:8000.
 
+[`.claude/launch.json`](../.claude/launch.json) holds the same command for the browser pane of the Claude desktop app. It is not part of the site.
+
 ## Deploy workflow
 
 [`.github/workflows/deploy.yml`](../.github/workflows/deploy.yml) publishes `site/` to GitHub Pages.
