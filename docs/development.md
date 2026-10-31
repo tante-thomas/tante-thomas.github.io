@@ -7,7 +7,34 @@ How the site is built and published. What the site must do is in the [brief](bri
 - `site/` is the published website. Everything in it is public at https://tante-thomas.github.io.
 - `docs/` holds the project documents. It is not published.
 
-The page is `site/index.html` with `site/style.css`. `site/gigs.js` fills the two gig lists from `site/gigs.csv`. `site/player.js` inserts the SoundCloud player when the visitor clicks "Load SoundCloud player", so SoundCloud receives no visitor data before that. "Remove SoundCloud player" takes it out again. `site/impressum.html` and `site/privacy.html` are the legal notice and the privacy policy. Each page repeats the footer with links to both. `site/icons.svg` holds the SoundCloud, Mixcloud and Instagram icons from [Simple Icons](https://simpleicons.org), which are free to use (CC0).
+The page is `site/index.html` with `site/style.css`. `site/gigs.js` fills the two gig lists from `site/gigs.csv`. `site/player.js` inserts the SoundCloud player when the visitor clicks "Load SoundCloud player", so SoundCloud receives no visitor data before that. "Remove SoundCloud player" takes it out again. `site/press/` holds the press kit files (see [Press kit](#press-kit)). `site/impressum.html` and `site/privacy.html` are the legal notice and the privacy policy. Each page repeats the footer with links to both. `site/icons.svg` holds the SoundCloud, Mixcloud and Instagram icons from [Simple Icons](https://simpleicons.org), which are free to use (CC0).
+
+## Press kit
+
+The press kit in the booking section links three files in [`site/press/`](../site/press/):
+
+| File | What it is | Used for |
+|---|---|---|
+| `tante-thomas-press-photo.jpg` | the press photo by Niklas Hemker, full size (6000 × 6000 px, 9.7 MB) | the "Press photo" download |
+| `tante-thomas-press-photo-800.jpg` | the same photo, 800 × 800 px, JPEG quality 80 (about 85 KB) | the photo shown on the page and the link preview card |
+| `tante-thomas-technical-rider.pdf` | the tech rider, one page, in German until the English version replaces it (Thomas, 31 October 2026) | the "Tech rider" download |
+
+The bio, the genre line and the photo credit are text in `site/index.html`, in the `press-kit` block.
+
+**Replace a file:** keep its file name, so the links and the preview tags stay valid, and merge the change to `main`.
+
+- **New photo:** save the full-size photo as `tante-thomas-press-photo.jpg`. Save a copy 800 px wide as `tante-thomas-press-photo-800.jpg`, compressed to about 100 KB or less. Any image editor does this, for example with Pillow:
+
+  ```bash
+  python -c "from PIL import Image; Image.open('new.jpg').resize((800, 800)).save('site/press/tante-thomas-press-photo-800.jpg', quality=80, optimize=True)"
+  ```
+
+  If the new photo is not square, change the size in `resize`, the `width` and `height` of the `<img>` and the `og:image:width` and `og:image:height` tags in `site/index.html`. Update the size given next to the "Press photo" button as well, and the photo credit if the photographer changes.
+- **New rider:** save it as `tante-thomas-technical-rider.pdf`. Check the page count and language next to the "Tech rider" button.
+
+The link preview card (Open Graph and Twitter card tags in the `<head>` of `site/index.html`) points to `https://tante-thomas.github.io/press/tante-thomas-press-photo-800.jpg`. WhatsApp and other apps cache previews for days, so a new photo may show there only later.
+
+Self-hosted images and PDFs send no visitor data to anyone but the host, so the [privacy policy](../site/privacy.html) needs no change for them.
 
 ## Add a gig
 

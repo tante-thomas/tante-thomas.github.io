@@ -6,6 +6,22 @@
   <meta name="description" content="DJ TANTE THOMAS. Music for body and soul. Mixes, gigs and booking.">
   <meta name="color-scheme" content="dark">
   <title>TANTE THOMAS</title>
+  <!-- The preview card a shared link shows (Open Graph, read by WhatsApp, Instagram and others; Twitter card for X).
+       Link previews need absolute URLs. The photo is square, so the small "summary" card shows it uncropped. -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tante-thomas.github.io/">
+  <meta property="og:title" content="TANTE THOMAS">
+  <meta property="og:description" content="DJ from Hamburg. Music for body and soul. Mixes, gigs and booking.">
+  <meta property="og:image" content="https://tante-thomas.github.io/press/tante-thomas-press-photo-800.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="800">
+  <meta property="og:image:height" content="800">
+  <meta property="og:image:alt" content="TANTE THOMAS in orange aviator sunglasses, holding headphones around the neck">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="TANTE THOMAS">
+  <meta name="twitter:description" content="DJ from Hamburg. Music for body and soul. Mixes, gigs and booking.">
+  <meta name="twitter:image" content="https://tante-thomas.github.io/press/tante-thomas-press-photo-800.jpg">
+  <meta name="twitter:image:alt" content="TANTE THOMAS in orange aviator sunglasses, holding headphones around the neck">
   <link rel="stylesheet" href="style.css">
   <script src="gigs.js" defer></script>
   <script src="player.js" defer></script>
@@ -54,6 +70,23 @@
       <h2 id="booking-heading">Booking</h2>
       <p>For bookings and enquiries, write an email.</p>
       <a class="button" href="mailto:thomaswening94@gmail.com?subject=Booking%20request">Booking request</a>
+
+      <!-- The files live in site/press/. docs/development.md says how to replace them. -->
+      <div class="press-kit">
+        <h3>Press kit</h3>
+        <img class="press-photo" src="press/tante-thomas-press-photo-800.jpg" width="800" height="800" loading="lazy"
+          alt="TANTE THOMAS in orange aviator sunglasses, holding headphones around the neck">
+        <p class="photo-credit">Photo: <a href="https://www.instagram.com/niklas_schniklas/">Niklas Hemker</a></p>
+        <p class="genre-line">Music for body and soul.</p>
+        <p>TANTE THOMAS is a queer DJ from Hamburg playing music for body and soul. With house at heart,
+          Tante cares less about genre than about where the music takes you. Sometimes that means losing yourself
+          in the groove, sometimes closing your eyes and letting a track sting a little. Music to move, feel,
+          let go and be somewhere else for a while.</p>
+        <ul class="downloads">
+          <li><a class="button" href="press/tante-thomas-press-photo.jpg" download>Press photo<span class="file-info">JPEG, 6000 × 6000 px, 9.7 MB</span></a></li>
+          <li><a class="button" href="press/tante-thomas-technical-rider.pdf" download>Tech rider<span class="file-info">PDF, 1 page, in German</span></a></li>
+        </ul>
+      </div>
     </section>
   </main>
 
