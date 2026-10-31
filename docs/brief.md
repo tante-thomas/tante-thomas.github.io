@@ -18,6 +18,7 @@ One page that replaces Linktree in every bio. It shows current mixes, upcoming g
 - Booking by a `mailto:` link to thomaswening94@gmail.com with a prefilled subject, for example "Booking request".
 - Press kit section: the bio, a one-line genre description, a downloadable high-resolution press photo and the tech rider PDF.
 - Deployed by a GitHub Actions workflow on every merge to `main`.
+- An Impressum (the legal notice German law requires by § 5 DDG, the Digital Services Act) and a privacy policy, both linked from the footer of every page.
 
 ## Nice-to-haves
 
@@ -42,11 +43,14 @@ One page that replaces Linktree in every bio. It shows current mixes, upcoming g
 - The genre line is "Music for body and soul." It changes the proposal "House music for body and soul." from the SoundCloud bio (Thomas, 31 October 2026).
 - Past gigs stay on the page as their own list, as in the SoundCloud bio and on Linktree. They show bookers where TANTE THOMAS has played (Thomas, 31 October 2026).
 - The accent colours are the signature pink and yellow-orange (Thomas, 31 October 2026).
+- The site needs an Impressum because German law requires one (Thomas, 31 October 2026).
+- The SoundCloud player loads only after a click on "Load SoundCloud player". Until then the page sends no visitor data to SoundCloud, so no consent banner is needed (Thomas, 31 October 2026).
 
 ## Done when
 
 - https://tante-thomas.github.io loads on a phone and the page has no horizontal scrolling at 375 px width.
-- The embedded player plays the latest mix without logging in.
+- After a click on "Load SoundCloud player", the embedded player plays the latest mix without logging in. Before the click, the page makes no request to SoundCloud.
+- The footer links open the Impressum and the privacy policy.
 - A gig dated yesterday in the data file appears under past gigs. A gig dated tomorrow appears under upcoming gigs.
 - Each social link opens the right profile. The first link on [Linktree](https://linktr.ee/tantethomas) opens the site.
 - The booking link opens a new email to thomaswening94@gmail.com with the subject filled in.

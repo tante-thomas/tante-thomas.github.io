@@ -7,7 +7,7 @@ How the site is built and published. What the site must do is in the [brief](bri
 - `site/` is the published website. Everything in it is public at https://tante-thomas.github.io.
 - `docs/` holds the project documents. It is not published.
 
-The page is `site/index.html` with `site/style.css`. `site/gigs.js` fills the two gig lists from `site/gigs.csv`. `site/icons.svg` holds the SoundCloud, Mixcloud and Instagram icons from [Simple Icons](https://simpleicons.org), which are free to use (CC0).
+The page is `site/index.html` with `site/style.css`. `site/gigs.js` fills the two gig lists from `site/gigs.csv`. `site/player.js` inserts the SoundCloud player when the visitor clicks "Load SoundCloud player", so SoundCloud receives no visitor data before that. `site/impressum.html` and `site/privacy.html` are the legal notice and the privacy policy. Each page repeats the footer with links to both. `site/icons.svg` holds the SoundCloud, Mixcloud and Instagram icons from [Simple Icons](https://simpleicons.org), which are free to use (CC0).
 
 ## Add a gig
 
