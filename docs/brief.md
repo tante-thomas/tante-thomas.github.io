@@ -40,7 +40,7 @@ One page that replaces Linktree in every bio. It shows current mixes, upcoming g
 - Booking is an email link, not a form service. The address is visible to scrapers (Thomas, 31 October 2026).
 - English only (Thomas, 31 October 2026).
 - The SoundCloud profile player is embedded, and Mixcloud is a link. SoundCloud is the main platform: Thomas has Artist Pro there, so uploads are unlimited and the statistics are better. The concern was that listeners without an account get ads and cannot skip ahead. In a test of the embedded player in a private browser tab, a mix started, skipping ahead worked and no ad played (Thomas, 31 October 2026).
-- The genre line is "Music for body and soul." It changes the proposal "House music for body and soul." from the SoundCloud bio (Thomas, 31 October 2026).
+- The genre line names the genre where it stands alone: "House music for body and soul." under the wordmark and the line "DJ • Hamburg", as in the SoundCloud profile, and in the search description and the link preview card. The press kit uses "Music for body and soul.", because the bio below it already says "with house at heart" (Thomas, 31 October 2026).
 - Past gigs stay on the page as their own list, as in the SoundCloud bio and on Linktree. They show bookers where TANTE THOMAS has played (Thomas, 31 October 2026).
 - The accent colours are the signature pink and yellow-orange (Thomas, 31 October 2026).
 - Pink is the accent colour for links, buttons and gig dates. The yellow-orange appears only in the wordmark's gradient (Thomas, 31 October 2026).

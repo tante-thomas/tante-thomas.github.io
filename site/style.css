@@ -71,8 +71,17 @@ h2 {
   color: transparent;
 }
 
-.genre {
+/* "DJ • Hamburg" under the wordmark, as in the SoundCloud profile. */
+.role {
   margin: 0.75rem 0 0;
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.genre {
+  margin: 0.5rem 0 0;
   color: var(--muted);
 }
 
@@ -206,6 +215,64 @@ h2 {
 
 .booking p {
   margin: 0 0 1rem;
+}
+
+/* The press kit sits inside the booking section, so its heading is one step quieter than the section's. */
+.press-kit {
+  margin-top: 2.5rem;
+}
+
+.press-kit h3 {
+  margin: 0 0 1rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* The width and height attributes only reserve the space. This keeps the photo inside the column
+   and, on wide screens, smaller than the screen's height. */
+.press-photo {
+  display: block;
+  width: 100%;
+  max-width: 24rem;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+.photo-credit {
+  margin: 0.4rem 0 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.photo-credit a {
+  color: var(--muted);
+}
+
+.genre-line {
+  margin: 1rem 0 0.5rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.downloads {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.downloads .button {
+  border-radius: 0.75rem;
+}
+
+.file-info {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--muted);
 }
 
 .button {
