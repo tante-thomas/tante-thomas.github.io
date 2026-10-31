@@ -7,7 +7,7 @@ How the site is built and published. What the site must do is in the [brief](bri
 - `site/` is the published website. Everything in it is public at https://tante-thomas.github.io.
 - `docs/` holds the project documents. It is not published.
 
-The page is `site/index.html` with `site/style.css`. `site/gigs.js` fills the two gig lists from `site/gigs.csv`. `site/player.js` inserts the SoundCloud player when the visitor clicks "Load SoundCloud player", so SoundCloud receives no visitor data before that. "Remove SoundCloud player" takes it out again. `site/press/` holds the press kit files (see [Press kit](#press-kit)). `site/impressum.html` and `site/privacy.html` are the legal notice and the privacy policy. Each page repeats the footer with links to both. `site/icons.svg` holds the SoundCloud, Mixcloud and Instagram icons from [Simple Icons](https://simpleicons.org), which are free to use (CC0).
+The page is `site/index.html` with `site/style.css`. `site/gigs.js` fills the two gig lists from `site/gigs.csv`. `site/player.js` inserts the SoundCloud player when the visitor clicks "Load SoundCloud player", so SoundCloud receives no visitor data before that. "Remove SoundCloud player" takes it out again. `site/press/` holds the press kit files (see [Press kit](#press-kit)). `site/images/` holds the photo at the top of the page (see [Top photo](#top-photo)). `site/fonts/` holds the wordmark's font, Archivo Narrow Bold, self-hosted so the page asks no font service for it. It is under the SIL Open Font License, which allows this as long as `site/fonts/OFL.txt` stays next to it. `site/impressum.html` and `site/privacy.html` are the legal notice and the privacy policy. Each page repeats the footer with links to both. `site/icons.svg` holds the SoundCloud, Mixcloud and Instagram icons from [Simple Icons](https://simpleicons.org), which are free to use (CC0).
 
 ## Press kit
 
@@ -35,6 +35,23 @@ The bio, the genre line and the photo credit are text in `site/index.html`, in t
 The link preview card (Open Graph and Twitter card tags in the `<head>` of `site/index.html`) points to `https://tante-thomas.github.io/press/tante-thomas-press-photo-800.jpg`. WhatsApp and other apps cache previews for days, so a new photo may show there only later.
 
 Self-hosted images and PDFs send no visitor data to anyone but the host, so the [privacy policy](../site/privacy.html) needs no change for them.
+
+## Top photo
+
+The photo at the top of the page is in two sizes in [`site/images/`](../site/images/). The browser picks the one that fits the screen:
+
+| File | Size | Used on |
+|---|---|---|
+| `hero-800.jpg` | 800 × 800 px, about 75 KB | phones and normal screens |
+| `hero-1280.jpg` | 1280 × 1280 px, about 210 KB | sharp (high-density) screens |
+
+**Replace it:** make both sizes from the new photo, JPEG quality about 78, and keep the file names:
+
+```bash
+python -c "from PIL import Image; im = Image.open('new.jpg'); [im.resize((s, s)).save(f'site/images/hero-{s}.jpg', quality=78, optimize=True) for s in (800, 1280)]"
+```
+
+If the new photo is not square, change the sizes in `resize` and the `width` and `height` of the `hero-photo` image in `site/index.html`. Change its `alt` text to describe the new photo. If the face is not in the upper third, change `object-position` of `.hero-photo` in `site/style.css`, which decides what stays visible when a short screen crops the photo. Update the credit in the footer of `site/index.html` if the photographer changes.
 
 ## Add a gig
 

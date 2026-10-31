@@ -42,8 +42,8 @@ One page that replaces Linktree in every bio. It shows current mixes, upcoming g
 - The SoundCloud profile player is embedded, and Mixcloud is a link. SoundCloud is the main platform: Thomas has Artist Pro there, so uploads are unlimited and the statistics are better. The concern was that listeners without an account get ads and cannot skip ahead. In a test of the embedded player in a private browser tab, a mix started, skipping ahead worked and no ad played (Thomas, 31 October 2026).
 - The genre line names the genre where it stands alone: "House music for body and soul." under the wordmark and the line "DJ • Hamburg", as in the SoundCloud profile, and in the search description and the link preview card. The press kit uses "Music for body and soul.", because the bio below it already says "with house at heart" (Thomas, 31 October 2026).
 - Past gigs stay on the page as their own list, as in the SoundCloud bio and on Linktree. They show bookers where TANTE THOMAS has played (Thomas, 31 October 2026).
-- The accent colours are the signature pink and yellow-orange (Thomas, 31 October 2026).
-- Pink is the accent colour for links, buttons and gig dates. The yellow-orange appears only in the wordmark's gradient (Thomas, 31 October 2026).
+- The wordmark is lettered like the SoundCloud set covers: Archivo Narrow in the signature pink #FF66C4, with a thin dark outline. The same pink is the accent colour for links, buttons and gig dates. It replaces the earlier pink and yellow-orange gradient (Thomas, 31 October 2026).
+- A close-up photo by Niklas Hemker heads the page, fading into the dark background behind the wordmark. The footer credits the photos (Thomas, 31 October 2026).
 - The site needs an Impressum because German law requires one (Thomas, 31 October 2026).
 - The SoundCloud player loads only after a click on "Load SoundCloud player". Until then the page sends no visitor data to SoundCloud, so no consent banner is needed (Thomas, 31 October 2026).
 
