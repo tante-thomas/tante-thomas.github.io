@@ -120,18 +120,31 @@ h2 {
   border-radius: 0.5rem;
 }
 
-/* Holds the "Load SoundCloud player" button until player.js swaps in the iframe. */
-.player-slot {
+/* The notice and the "Load SoundCloud player" button, shown until the visitor loads the player. */
+.player-consent {
   padding: 1.25rem 1rem;
   background: var(--surface);
   border-radius: 0.5rem;
   text-align: center;
 }
 
-.player-slot p {
+.player-consent p {
   margin: 0 0 1rem;
   font-size: 0.9rem;
   color: var(--muted);
+}
+
+/* No display rule here, so the hidden attribute keeps working. */
+.unload-player {
+  margin-top: 0.5rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.85rem;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .gig-list {
