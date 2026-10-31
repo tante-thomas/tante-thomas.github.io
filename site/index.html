@@ -15,9 +15,9 @@
       <h1 class="wordmark">TANTE THOMAS</h1>
       <p class="genre">Music for body and soul.</p>
       <ul class="links">
-        <li><a href="https://soundcloud.com/tantethomas">SoundCloud</a></li>
-        <li><a href="https://www.mixcloud.com/TanteThomas/">Mixcloud</a></li>
-        <li><a href="https://www.instagram.com/tante.thomas.dj/">Instagram</a></li>
+        <li><a href="https://soundcloud.com/tantethomas"><svg class="icon" aria-hidden="true"><use href="icons.svg#soundcloud"></use></svg>SoundCloud</a></li>
+        <li><a href="https://www.mixcloud.com/TanteThomas/"><svg class="icon" aria-hidden="true"><use href="icons.svg#mixcloud"></use></svg>Mixcloud</a></li>
+        <li><a href="https://www.instagram.com/tante.thomas.dj/"><svg class="icon" aria-hidden="true"><use href="icons.svg#instagram"></use></svg>Instagram</a></li>
       </ul>
     </header>
 
@@ -31,9 +31,14 @@
 
     <section aria-labelledby="gigs-heading">
       <h2 id="gigs-heading">Upcoming gigs</h2>
-      <!-- Filled by gigs.js from gigs.csv. -->
-      <ul id="gig-list"></ul>
+      <!-- Both gig lists are filled by gigs.js from gigs.csv. -->
+      <ul id="gig-list" class="gig-list"></ul>
       <p id="gig-status" aria-live="polite">Loading gigs …</p>
+    </section>
+
+    <section id="past-gigs" aria-labelledby="past-gigs-heading" hidden>
+      <h2 id="past-gigs-heading">Past gigs</h2>
+      <ul id="past-gig-list" class="gig-list past"></ul>
     </section>
 
     <section class="booking" aria-labelledby="booking-heading">

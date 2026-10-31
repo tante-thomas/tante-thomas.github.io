@@ -1,5 +1,5 @@
-// Lists the upcoming gigs from gigs.csv and hides those whose date has passed,
-// so adding a gig is one line in that file (docs/brief.md, "As little upkeep as possible").
+// Lists the gigs from gigs.csv in two lists: upcoming gigs, earliest first, and past gigs,
+// latest first. Adding a gig is one line in that file (docs/brief.md, "As little upkeep as possible").
 
 const GIGS_FILE = "gigs.csv";
 const HEADER_LINES = 1;
@@ -24,16 +24,22 @@ function todayAsIsoDate() {
   return `${now.getFullYear()}-${month}-${day}`;
 }
 
-/** Returns the gigs dated today or later, earliest first. ISO dates sort as text. */
-function upcomingGigs(csvText) {
+/**
+ * Returns { upcoming, past }: gigs dated today or later, earliest first, and gigs
+ * dated before today, latest first. ISO dates sort as text.
+ */
+function splitGigsByDate(csvText) {
   const today = todayAsIsoDate();
-  return csvText
+  const gigs = csvText
     .split(/\r?\n/)
     .slice(HEADER_LINES)
     .filter((line) => line.trim() !== "")
     .map(parseGig)
-    .filter((gig) => gig.date >= today)
     .sort((first, second) => first.date.localeCompare(second.date));
+  return {
+    upcoming: gigs.filter((gig) => gig.date >= today),
+    past: gigs.filter((gig) => gig.date < today).reverse(),
+  };
 }
 
 /** Formats 2026-11-06 as "Fri 6 Nov 2026". Noon avoids a day shift across time zones. */
@@ -68,21 +74,27 @@ function gigListItem(gig) {
   return item;
 }
 
-async function showUpcomingGigs() {
-  const list = document.getElementById("gig-list");
-  const status = document.getElementById("gig-status");
+function showGigs({ upcoming, past }) {
+  document.getElementById("gig-list").replaceChildren(...upcoming.map(gigListItem));
+  document.getElementById("gig-status").textContent =
+    upcoming.length === 0 ? "No gigs announced right now. Follow on Instagram for news." : "";
+
+  document.getElementById("past-gig-list").replaceChildren(...past.map(gigListItem));
+  document.getElementById("past-gigs").hidden = past.length === 0;
+}
+
+async function loadGigs() {
   try {
     const response = await fetch(GIGS_FILE, { cache: "no-cache" });
     if (!response.ok) {
       throw new Error(`${GIGS_FILE} answered ${response.status}`);
     }
-    const gigs = upcomingGigs(await response.text());
-    list.replaceChildren(...gigs.map(gigListItem));
-    status.textContent = gigs.length === 0 ? "No gigs announced right now. Follow on Instagram for news." : "";
+    showGigs(splitGigsByDate(await response.text()));
   } catch (error) {
-    status.textContent = "The gig list could not be loaded. Check Instagram for upcoming dates.";
+    document.getElementById("gig-status").textContent =
+      "The gig list could not be loaded. Check Instagram for upcoming dates.";
     console.error(error);
   }
 }
 
-showUpcomingGigs();
+loadGigs();

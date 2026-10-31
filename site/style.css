@@ -5,7 +5,9 @@
   --surface: #17171b;
   --text: #f2f2f2;
   --muted: #a3a3ad;
+  /* Signature colours: pink with yellow-orange. */
   --accent: #ff5d8f;
+  --accent-warm: #ffb02e;
   --column-width: 40rem;
   --gutter: 1rem;
 }
@@ -60,6 +62,10 @@ h2 {
   letter-spacing: 0.08em;
   line-height: 1;
   white-space: nowrap;
+  background: linear-gradient(90deg, var(--accent), var(--accent-warm));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 .genre {
@@ -77,9 +83,20 @@ h2 {
   list-style: none;
 }
 
+.links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.icon {
+  width: 1.1em;
+  height: 1.1em;
+  fill: currentColor;
+}
+
 .links a,
 .button {
-  display: inline-block;
   padding: 0.6rem 1.1rem;
   border: 1px solid var(--muted);
   border-radius: 999px;
@@ -103,13 +120,13 @@ h2 {
   border-radius: 0.5rem;
 }
 
-#gig-list {
+.gig-list {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-#gig-list li {
+.gig-list li {
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 0 1rem;
@@ -119,8 +136,9 @@ h2 {
   border-radius: 0.5rem;
 }
 
-#gig-list time {
+.gig-list time {
   font-weight: 700;
+  color: var(--accent-warm);
 }
 
 .gig-place {
@@ -128,10 +146,28 @@ h2 {
   color: var(--muted);
 }
 
-#gig-list li a {
+.gig-list li a {
   grid-column: 2;
   grid-row: 1 / span 2;
   align-self: center;
+}
+
+/* Past gigs are a record for bookers, so they take less room than upcoming ones. */
+.gig-list.past li {
+  padding: 0.5rem 1rem;
+  background: none;
+  border-bottom: 1px solid var(--surface);
+  border-radius: 0;
+  margin: 0;
+}
+
+.gig-list.past time {
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.gig-list.past .gig-place {
+  color: var(--text);
 }
 
 #gig-status {
@@ -143,6 +179,7 @@ h2 {
 }
 
 .button {
+  display: inline-block;
   border-color: var(--accent);
   color: var(--accent);
 }
