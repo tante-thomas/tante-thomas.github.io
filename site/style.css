@@ -5,9 +5,8 @@
   --surface: #17171b;
   --text: #f2f2f2;
   --muted: #a3a3ad;
-  /* Signature colours: pink is the accent. Yellow-orange appears only in the wordmark's gradient. */
-  --accent: #ff5d8f;
-  --accent-warm: #ffb02e;
+  /* The signature pink of the SoundCloud set covers, for the wordmark, links, buttons and gig dates. */
+  --accent: #ff66c4;
   --column-width: 40rem;
   --gutter: 1rem;
 }
@@ -48,27 +47,70 @@ h2 {
   color: var(--muted);
 }
 
-/* Wordmark until a logo exists. The set name is about 9.2 times as wide as the
-   font size, so 10cqi (a tenth of the column) keeps it on one line at every width.
-   Viewport units overflowed on desktop, where the column stops growing. The gradient
-   covers only the column, so a letter outside it was not painted at all. */
+/* Self-hosted, so the page asks no font service for it (privacy.html, "In short").
+   Archivo Narrow by Omnibus-Type, SIL Open Font License 1.1 (fonts/OFL.txt).
+   "block" hides the wordmark until the font has loaded: the wider fallback font
+   would not fit on a phone and would make the page scroll sideways for a moment. */
+@font-face {
+  font-family: "Archivo Narrow";
+  src: url("fonts/archivo-narrow-latin-700-normal.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: block;
+}
+
 .hero {
   container-type: inline-size;
-  padding: 3.5rem 0 0.5rem;
+  padding: 0 0 0.5rem;
   text-align: center;
 }
 
+/* The photo runs to the screen edges on phones and fades into the page at the bottom,
+   so the wordmark can sit on the faded part. On wide screens it keeps to the column. */
+.hero-photo {
+  display: block;
+  width: calc(100% + 2 * var(--gutter));
+  height: auto;
+  max-height: 75vh;
+  margin: 0 calc(-1 * var(--gutter));
+  object-fit: cover;
+  object-position: 50% 30%;
+  -webkit-mask-image: linear-gradient(to bottom, black 55%, transparent);
+  mask-image: linear-gradient(to bottom, black 55%, transparent);
+}
+
+/* Inside the column the sides fade as well, so the photo has no hard edges. */
+@media (min-width: 42rem) {
+  .hero-photo {
+    width: 100%;
+    margin: 0;
+    -webkit-mask-image:
+      linear-gradient(to bottom, black 55%, transparent),
+      linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    -webkit-mask-composite: source-in;
+    mask-image:
+      linear-gradient(to bottom, black 55%, transparent),
+      linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    mask-composite: intersect;
+  }
+}
+
+/* Wordmark until a logo exists, lettered like the SoundCloud set covers: Archivo Narrow
+   in the cover pink with a thin dark outline. paint-order draws the outline behind the
+   fill, so it widens the letters instead of eating into them. The set name is about
+   6.9 times as wide as the font size, so 13cqi (90 % of the column) keeps it on one line at every width. */
 .wordmark {
-  margin: 0;
-  font-size: clamp(1.75rem, 10cqi, 4.5rem);
-  font-weight: 900;
-  letter-spacing: 0.08em;
+  position: relative;
+  margin: -3.5rem 0 0;
+  font-family: "Archivo Narrow", system-ui, sans-serif;
+  font-size: clamp(2.25rem, 13cqi, 5.5rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
   line-height: 1;
   white-space: nowrap;
-  background: linear-gradient(90deg, var(--accent), var(--accent-warm));
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
+  color: var(--accent);
+  -webkit-text-stroke: 0.08em var(--background);
+  paint-order: stroke fill;
 }
 
 /* "DJ • Hamburg" under the wordmark, as in the SoundCloud profile. */

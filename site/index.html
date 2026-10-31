@@ -22,6 +22,8 @@
   <meta name="twitter:description" content="DJ from Hamburg. House music for body and soul. Mixes, gigs and booking.">
   <meta name="twitter:image" content="https://tante-thomas.github.io/press/tante-thomas-press-photo-800.jpg">
   <meta name="twitter:image:alt" content="TANTE THOMAS in orange aviator sunglasses, holding headphones around the neck">
+  <!-- Loaded early so the wordmark does not first show in the fallback font. -->
+  <link rel="preload" href="fonts/archivo-narrow-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="style.css">
   <script src="gigs.js" defer></script>
   <script src="player.js" defer></script>
@@ -29,6 +31,9 @@
 <body>
   <main>
     <header class="hero">
+      <img class="hero-photo" src="images/hero-800.jpg"
+        srcset="images/hero-800.jpg 800w, images/hero-1280.jpg 1280w" sizes="(min-width: 40rem) 40rem, 100vw"
+        width="800" height="800" alt="TANTE THOMAS in orange aviator sunglasses, close up">
       <h1 class="wordmark">TANTE THOMAS</h1>
       <p class="role">DJ • Hamburg</p>
       <p class="genre">House music for body and soul.</p>
@@ -93,6 +98,7 @@
 
   <footer>
     <p>TANTE THOMAS</p>
+    <p>Photos: <a href="https://www.instagram.com/niklas_schniklas/">Niklas Hemker</a></p>
     <nav aria-label="Legal"><a href="impressum.html">Impressum</a> <a href="privacy.html">Privacy policy</a></nav>
   </footer>
 </body>
