@@ -13,7 +13,7 @@ One page that replaces Linktree in every bio. It shows current mixes, upcoming g
 
 - Dark, mobile-first single page in English. The name is always written TANTE THOMAS, set in type as a wordmark until a logo exists.
 - An embedded mix player that shows new uploads by itself, plus a link to the other mix platform.
-- Upcoming gigs read from a data file in the repository, one entry per gig, for example `2026-11-14, Club XY, Berlin, ticket link`. Gigs whose date has passed are hidden automatically.
+- Gigs read from a data file in the repository, one entry per gig, for example `2026-11-14, Club XY, Berlin, ticket link`. Gigs whose date has passed move from the upcoming gigs to a list of past gigs automatically.
 - Links to [Instagram](https://www.instagram.com/tante.thomas.dj/), [SoundCloud](https://soundcloud.com/tantethomas) and [Mixcloud](https://www.mixcloud.com/TanteThomas/).
 - Booking by a `mailto:` link to thomaswening94@gmail.com with a prefilled subject, for example "Booking request".
 - Press kit section: the bio, a one-line genre description, a downloadable high-resolution press photo and the tech rider PDF.
@@ -39,16 +39,15 @@ One page that replaces Linktree in every bio. It shows current mixes, upcoming g
 - Booking is an email link, not a form service. The address is visible to scrapers (Thomas, 31 October 2026).
 - English only (Thomas, 31 October 2026).
 - The SoundCloud profile player is embedded, and Mixcloud is a link. SoundCloud is the main platform: Thomas has Artist Pro there, so uploads are unlimited and the statistics are better. The concern was that listeners without an account get ads and cannot skip ahead. In a test of the embedded player in a private browser tab, a mix started, skipping ahead worked and no ad played (Thomas, 31 October 2026).
-
-## Open decisions
-
-- **Genre line.** Proposal: "House music for body and soul.", from Thomas's SoundCloud bio.
+- The genre line is "Music for body and soul." It changes the proposal "House music for body and soul." from the SoundCloud bio (Thomas, 31 October 2026).
+- Past gigs stay on the page as their own list, as in the SoundCloud bio and on Linktree. They show bookers where TANTE THOMAS has played (Thomas, 31 October 2026).
+- The accent colours are the signature pink and yellow-orange (Thomas, 31 October 2026).
 
 ## Done when
 
 - https://tante-thomas.github.io loads on a phone and the page has no horizontal scrolling at 375 px width.
 - The embedded player plays the latest mix without logging in.
-- A gig dated yesterday in the data file does not appear. A gig dated tomorrow does.
+- A gig dated yesterday in the data file appears under past gigs. A gig dated tomorrow appears under upcoming gigs.
 - Each social link opens the right profile. The first link on [Linktree](https://linktr.ee/tantethomas) opens the site.
 - The booking link opens a new email to thomaswening94@gmail.com with the subject filled in.
 - The press photo and the tech rider download from the page.

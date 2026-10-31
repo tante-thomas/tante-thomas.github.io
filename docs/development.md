@@ -7,6 +7,23 @@ How the site is built and published. What the site must do is in the [brief](bri
 - `site/` is the published website. Everything in it is public at https://tante-thomas.github.io.
 - `docs/` holds the project documents. It is not published.
 
+The page is `site/index.html` with `site/style.css`. `site/gigs.js` fills the two gig lists from `site/gigs.csv`. `site/icons.svg` holds the SoundCloud, Mixcloud and Instagram icons from [Simple Icons](https://simpleicons.org), which are free to use (CC0).
+
+## Add a gig
+
+Add one line to [`site/gigs.csv`](../site/gigs.csv) and merge it to `main`:
+
+```csv
+2026-11-14,Club XY,Berlin,https://example.com/tickets
+```
+
+- **Fields:** date as `YYYY-MM-DD`, venue, city, ticket link. Leave the ticket link empty for no "Tickets" button, but keep the comma before it.
+- **Commas:** the venue and the city may not contain a comma. The ticket link may.
+- **Order:** any. The page sorts by date.
+- **Past gigs:** a gig is listed under "Upcoming gigs" up to and including its date, in the visitor's time zone. From the next day it moves to "Past gigs", latest first. Keep old lines in the file: they are the list of venues played.
+
+If the file cannot be loaded, the page says so and points to Instagram.
+
 ## Run locally
 
 Any static file server works, for example:

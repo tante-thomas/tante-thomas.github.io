@@ -3,32 +3,51 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="DJ TANTE THOMAS. Music for body and soul. Mixes, gigs and booking.">
+  <meta name="color-scheme" content="dark">
   <title>TANTE THOMAS</title>
-  <style>
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: grid;
-      place-content: center;
-      gap: 1rem;
-      padding: 1rem;
-      background: #0b0b0d;
-      color: #f2f2f2;
-      font-family: system-ui, sans-serif;
-      text-align: center;
-    }
-    h1 { margin: 0; letter-spacing: 0.15em; }
-    a { color: #f2f2f2; }
-  </style>
+  <link rel="stylesheet" href="style.css">
+  <script src="gigs.js" defer></script>
 </head>
 <body>
-  <!-- Placeholder until the real page is built from docs/brief.md. -->
-  <h1>TANTE THOMAS</h1>
-  <p>House music for body and soul.</p>
-  <p>
-    <a href="https://soundcloud.com/tantethomas">SoundCloud</a> ·
-    <a href="https://www.mixcloud.com/TanteThomas/">Mixcloud</a> ·
-    <a href="https://www.instagram.com/tante.thomas.dj/">Instagram</a>
-  </p>
+  <main>
+    <header class="hero">
+      <h1 class="wordmark">TANTE THOMAS</h1>
+      <p class="genre">Music for body and soul.</p>
+      <ul class="links">
+        <li><a href="https://soundcloud.com/tantethomas"><svg class="icon" aria-hidden="true"><use href="icons.svg#soundcloud"></use></svg>SoundCloud</a></li>
+        <li><a href="https://www.mixcloud.com/TanteThomas/"><svg class="icon" aria-hidden="true"><use href="icons.svg#mixcloud"></use></svg>Mixcloud</a></li>
+        <li><a href="https://www.instagram.com/tante.thomas.dj/"><svg class="icon" aria-hidden="true"><use href="icons.svg#instagram"></use></svg>Instagram</a></li>
+      </ul>
+    </header>
+
+    <section aria-labelledby="mixes-heading">
+      <h2 id="mixes-heading">Mixes</h2>
+      <!-- The profile player lists the newest uploads, so a new mix needs no change here.
+           46170096 is the user ID of soundcloud.com/tantethomas, from SoundCloud's oEmbed answer. -->
+      <iframe class="player" title="TANTE THOMAS on SoundCloud" loading="lazy" allow="autoplay; encrypted-media"
+        src="https://w.soundcloud.com/player/?visual=true&url=https%3A%2F%2Fapi.soundcloud.com%2Fusers%2F46170096&show_artwork=true"></iframe>
+    </section>
+
+    <section aria-labelledby="gigs-heading">
+      <h2 id="gigs-heading">Upcoming gigs</h2>
+      <!-- Both gig lists are filled by gigs.js from gigs.csv. -->
+      <ul id="gig-list" class="gig-list"></ul>
+      <p id="gig-status" aria-live="polite">Loading gigs …</p>
+    </section>
+
+    <section id="past-gigs" aria-labelledby="past-gigs-heading" hidden>
+      <h2 id="past-gigs-heading">Past gigs</h2>
+      <ul id="past-gig-list" class="gig-list past"></ul>
+    </section>
+
+    <section class="booking" aria-labelledby="booking-heading">
+      <h2 id="booking-heading">Booking</h2>
+      <p>For bookings and enquiries, write an email.</p>
+      <a class="button" href="mailto:thomaswening94@gmail.com?subject=Booking%20request">Booking request</a>
+    </section>
+  </main>
+
+  <footer>TANTE THOMAS</footer>
 </body>
 </html>
