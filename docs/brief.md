@@ -39,10 +39,7 @@ One page that replaces Linktree in every bio. It shows current mixes, upcoming g
 - Booking is an email link, not a form service. The address is visible to scrapers (Thomas, 31 October 2026).
 - English only (Thomas, 31 October 2026).
 - The SoundCloud profile player is embedded, and Mixcloud is a link. SoundCloud is the main platform: Thomas has Artist Pro there, so uploads are unlimited and the statistics are better. The concern was that listeners without an account get ads and cannot skip ahead. In a test of the embedded player in a private browser tab, a mix started, skipping ahead worked and no ad played (Thomas, 31 October 2026).
-
-## Open decisions
-
-- **Genre line.** Proposal: "House music for body and soul.", from Thomas's SoundCloud bio.
+- The genre line is "Music for body and soul." It changes the proposal "House music for body and soul." from the SoundCloud bio (Thomas, 31 October 2026).
 
 ## Done when
 
