@@ -65,6 +65,7 @@ Add one line to [`site/gigs.csv`](../site/gigs.csv) and merge it to `main`:
 - **Commas:** the venue and the city may not contain a comma. The ticket link may.
 - **Order:** any. The page sorts by date.
 - **Past gigs:** a gig is listed under "Upcoming gigs" up to and including its date, in the visitor's time zone. From the next day it moves to "Past gigs", latest first. Keep old lines in the file: they are the list of venues played.
+- **Ticket links:** the "Tickets" button shows up to and including the day after the gig's date, because a set often starts after midnight. From the second day after, the gig is listed without it. The link can stay in the file.
 
 If the file cannot be loaded, the page says so and points to Instagram.
 
