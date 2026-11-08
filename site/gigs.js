@@ -4,6 +4,8 @@
 const GIGS_FILE = "gigs.csv";
 const HEADER_LINES = 1;
 const FIELDS_PER_GIG = 4; // date, venue, city, ticket link
+// A gig often runs past midnight, so its "Tickets" link stays up on the day after its date too.
+const TICKET_LINK_DAYS_AFTER_GIG = 1;
 
 /**
  * Splits one line of gigs.csv into a gig. The ticket link is everything after the
@@ -16,12 +18,16 @@ function parseGig(line) {
   return { date, venue, city, ticketLink };
 }
 
-/** Returns today as YYYY-MM-DD in the visitor's time zone, the format gigs.csv uses. */
-function todayAsIsoDate() {
-  const now = new Date();
-  const month = String(now.getMonth() + 1).padStart(2, "0");
-  const day = String(now.getDate()).padStart(2, "0");
-  return `${now.getFullYear()}-${month}-${day}`;
+/**
+ * Returns the date the given number of days before today as YYYY-MM-DD in the visitor's
+ * time zone, the format gigs.csv uses. 0 is today.
+ */
+function isoDateDaysAgo(days) {
+  const date = new Date();
+  date.setDate(date.getDate() - days);
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${date.getFullYear()}-${month}-${day}`;
 }
 
 /**
@@ -29,7 +35,7 @@ function todayAsIsoDate() {
  * dated before today, latest first. ISO dates sort as text.
  */
 function splitGigsByDate(csvText) {
-  const today = todayAsIsoDate();
+  const today = isoDateDaysAgo(0);
   const gigs = csvText
     .split(/\r?\n/)
     .slice(HEADER_LINES)
@@ -65,7 +71,8 @@ function gigListItem(gig) {
 
   item.append(date, place);
 
-  if (gig.ticketLink !== "") {
+  const ticketsStillUseful = gig.date >= isoDateDaysAgo(TICKET_LINK_DAYS_AFTER_GIG);
+  if (gig.ticketLink !== "" && ticketsStillUseful) {
     const tickets = document.createElement("a");
     tickets.href = gig.ticketLink;
     tickets.textContent = "Tickets";
